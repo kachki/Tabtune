@@ -56,7 +56,7 @@ TabTune is organized for easy development and customization:
 -Adjusting overall device volume can increase the maximum threshold.
 -For maximum seamlessnes make sure to pause a tab throught the extention instead of on the tab itself.
 
-## Demo
+## Design
 
-<!-- Add screenshots or a GIF here to showcase the extension in action -->
+![TabTune Design](icons/tabtunedesign.png)
 
