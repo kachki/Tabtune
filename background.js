@@ -131,6 +131,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             tabsWithMedia.push({
               id: tab.id,
               title: tab.title,
+              favIconUrl: tab.favIconUrl,
               volume: tabVolumes.get(tab.id) || 1.0,
               isMuted: mutedTabs.has(tab.id),
               isPaused: pausedTabs.has(tab.id)

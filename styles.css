@@ -307,4 +307,19 @@ body.dark-mode input[type="range"]::-ms-fill-upper {
 
 body.dark-mode .center-title {
   color: #fff;
+}
+
+.tab-favicon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.tab-favicon.fallback {
+  font-size: 15px;
+  margin-right: 6px;
+  vertical-align: middle;
 } 

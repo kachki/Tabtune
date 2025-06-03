@@ -1,38 +1,57 @@
 # TabTune Chrome Extension
 
-A Chrome extension that allows you to control and sync audio volume across all browser tabs with audio or video elements.
+TabTune is a powerful Chrome extension that gives you full control over audio and video playback across all your browser tabs. With an intuitive interface, you can independently adjust the volume, mute, pause, or remove any tab with media, and switch between light and dark modes for a comfortable experience.
 
 ## Features
 
-- Control volume of audio/video elements in the current tab
-- Sync volume across all open tabs
-- Simple and intuitive interface
-- Works with any website that has audio or video content
+- **Independent Volume Control:** Adjust the volume for each tab with audio or video content.
+- **Mute/Unmute Tabs:** Instantly mute or unmute any tab.
+- **Pause/Play Tabs:** Pause or resume playback in any tab.
+- **Remove Tabs from View:** Temporarily hide tabs from the TabTune interface (restore with Refresh).
+- **Persistent State:** Removed tabs stay hidden until you choose to refresh.
+- **Dark Mode:** Toggle between light and dark themes with a single click.
+- **Modern, Responsive UI:** Clean, user-friendly popup with smooth controls and visual feedback.
+
+## Tech Stack
+
+- **JavaScript (ES6+)** — Core logic and Chrome extension APIs
+- **HTML5** — Popup and extension structure
+- **CSS3** — Modern, responsive, and dark mode styling
+- **Chrome Extension Manifest V3** — Secure, performant extension architecture
+- **Chrome APIs:**
+  - `chrome.tabs`, `chrome.scripting`, `chrome.storage`, `chrome.runtime`
 
 ## Installation
 
-1. Download or clone this repository
-2. Open Chrome and navigate to `chrome://extensions/`
-3. Enable "Developer mode" in the top right corner
-4. Click "Load unpacked" and select the extension directory
-5. The TabTune extension should now be installed and visible in your Chrome toolbar
+1. Download or clone this repository.
+2. Open Chrome and go to `chrome://extensions/`.
+3. Enable "Developer mode" in the top right corner.
+4. Click "Load unpacked" and select the extension directory.
+5. TabTune will appear in your Chrome toolbar.
 
 ## Usage
 
-1. Click the TabTune icon in your Chrome toolbar to open the popup
-2. Use the volume slider to adjust the volume of audio/video elements in the current tab
-3. Click "Sync All Tabs" to apply the current volume level to all open tabs with audio/video content
+1. Click the TabTune icon in your Chrome toolbar to open the popup.
+2. Adjust the volume slider for any tab with audio/video.
+3. Use the **Mute**, **Pause**, or **Remove** controls as needed.
+4. Click **Refresh** at the bottom to restore removed tabs.
+5. Toggle dark mode with the sun/moon icon in the header.
 
 ## Development
 
-The extension is built using Chrome Extension Manifest V3 and includes:
+TabTune is organized for easy development and customization:
 
-- `manifest.json`: Extension configuration
-- `popup.html/js`: User interface
-- `content.js`: Handles volume control on individual pages
-- `background.js`: Manages communication between tabs
-- `styles.css`: Popup styling
+- `manifest.json` — Extension configuration and permissions
+- `popup.html` / `popup.js` — User interface and logic
+- `content.js` — Injected into tabs to control media elements
+- `background.js` — Handles tab state, messaging, and storage
+- `styles.css` — All popup and dark mode styling
+- `icons/` — Extension icons (add your own 128x128 PNG if needed)
 
-## Note
+## Notes
 
-You'll need to add an icon file at `icons/icon128.png` before loading the extension. You can use any 128x128 PNG image as a placeholder. 
+- TabTune works on any website with audio or video elements, except for Chrome system pages (e.g., chrome:// URLs).
+-Adjusting overall device volume can increase the maximum threshold.
+
+## Demo
+

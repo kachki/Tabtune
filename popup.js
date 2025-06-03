@@ -41,9 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function createTabControl(tab, removedTabs) {
     const tabControl = document.createElement('div');
     tabControl.className = 'tab-control';
+    const favicon = tab.favIconUrl ? `<img src="${tab.favIconUrl}" class="tab-favicon" alt="icon" onerror="this.style.display='none'">` : '<span class="tab-favicon fallback">🌐</span>';
     tabControl.innerHTML = `
       <div class="tab-header">
-        <div class="tab-title" title="${tab.title}">${tab.title}</div>
+        <div class="tab-title" title="${tab.title}">${favicon} ${tab.title}</div>
         <div class="tab-actions">
           <button class="tab-button mute-button" title="Mute">${tab.isMuted ? 'Unmute' : 'Mute'}</button>
           <button class="tab-button pause-button" title="Pause">${tab.isPaused ? 'Play' : 'Pause'}</button>
