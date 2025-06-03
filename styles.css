@@ -322,4 +322,12 @@ body.dark-mode .center-title {
   font-size: 15px;
   margin-right: 6px;
   vertical-align: middle;
+}
+
+.dark-mode-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  transition: filter 0.2s;
 } 

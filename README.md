@@ -46,7 +46,7 @@ TabTune is organized for easy development and customization:
 - `content.js` — Injected into tabs to control media elements
 - `background.js` — Handles tab state, messaging, and storage
 - `styles.css` — All popup and dark mode styling
-- `icons/` — Extension icons (add your own 128x128 PNG if needed)
+- `icons/` — Extension icons 
 
 ## Notes
 

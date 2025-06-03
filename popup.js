@@ -3,12 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const noTabsMessage = document.getElementById('noTabsMessage');
   const refreshButton = document.getElementById('refreshButton');
   const darkModeToggle = document.getElementById('darkModeToggle');
+  const darkModeIcon = document.getElementById('darkModeIcon');
 
   // Dark mode logic
   function setDarkMode(isDark) {
     document.body.classList.toggle('dark-mode', isDark);
-    if (darkModeToggle) {
-      darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+    if (darkModeIcon) {
+      darkModeIcon.src = isDark ? 'icons/sun.png' : 'icons/moon.png';
+      darkModeIcon.alt = isDark ? 'Switch to light mode' : 'Switch to dark mode';
     }
   }
 
