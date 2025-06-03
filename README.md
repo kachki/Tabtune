@@ -10,6 +10,7 @@ TabTune is a powerful Chrome extension that gives you full control over audio an
 - **Remove Tabs from View:** Temporarily hide tabs from the TabTune interface (restore with Refresh).
 - **Persistent State:** Removed tabs stay hidden until you choose to refresh.
 - **Dark Mode:** Toggle between light and dark themes with a single click.
+- **Double-Click to Activate**: Double-click any tab in the popup to instantly switch to it and focus its window.
 - **Modern, Responsive UI:** Clean, user-friendly popup with smooth controls and visual feedback.
 
 ## Tech Stack
@@ -33,9 +34,10 @@ TabTune is a powerful Chrome extension that gives you full control over audio an
 
 1. Click the TabTune icon in your Chrome toolbar to open the popup.
 2. Adjust the volume slider for any tab with audio/video.
-3. Use the **Mute**, **Pause**, or **Remove** controls as needed.
-4. Click **Refresh** at the bottom to restore removed tabs.
-5. Toggle dark mode with the sun/moon icon in the header.
+3. Use the **Mute**, **Pause**, or **Remove** controls as needed. 
+4. Double-click any tab in the popup to instantly switch to it and focus its window.
+5. Click **Refresh** at the bottom to restore removed tabs.
+6. Toggle dark mode with the sun/moon icon in the header.
 
 ## Development
 
@@ -52,6 +54,9 @@ TabTune is organized for easy development and customization:
 
 - TabTune works on any website with audio or video elements, except for Chrome system pages (e.g., chrome:// URLs).
 -Adjusting overall device volume can increase the maximum threshold.
+-For maximum seamlessnes make sure to pause a tab throught the extention instead of on the tab itself.
 
 ## Demo
+
+<!-- Add screenshots or a GIF here to showcase the extension in action -->
 

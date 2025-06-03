@@ -128,13 +128,41 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         for (const tab of tabs) {
           const hasMedia = await checkTabForMedia(tab);
           if (hasMedia) {
+            // Get actual volume and paused state from the first media element in the tab
+            let actualVolume = 1.0;
+            let actualPaused = false;
+            try {
+              const results = await chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                func: () => {
+                  const media = document.querySelector('audio, video');
+                  if (!media) return { volume: 1.0, paused: false };
+                  // If using Web Audio API gain node, prefer that value
+                  let volume = 1.0;
+                  if (media._tabtuneGainNode) {
+                    volume = media._tabtuneGainNode.gain.value;
+                  } else {
+                    volume = media.volume;
+                  }
+                  return { volume, paused: media.paused };
+                }
+              });
+              if (results && results[0] && results[0].result) {
+                actualVolume = results[0].result.volume;
+                actualPaused = results[0].result.paused;
+              }
+            } catch (e) {
+              actualVolume = tabVolumes.get(tab.id) || 1.0;
+              actualPaused = pausedTabs.has(tab.id);
+            }
             tabsWithMedia.push({
               id: tab.id,
+              windowId: tab.windowId,
               title: tab.title,
               favIconUrl: tab.favIconUrl,
-              volume: tabVolumes.get(tab.id) || 1.0,
+              volume: actualVolume,
               isMuted: mutedTabs.has(tab.id),
-              isPaused: pausedTabs.has(tab.id)
+              isPaused: actualPaused
             });
           }
         }
@@ -177,6 +205,16 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     tabVolumes.delete(tabId);
     mutedTabs.delete(tabId);
     pausedTabs.delete(tabId);
+    sendResponse({ success: true });
+    return true;
+  }
+
+  if (message.action === 'activateTab') {
+    const { tabId, windowId } = message;
+    chrome.tabs.update(tabId, { active: true });
+    if (windowId !== undefined) {
+      chrome.windows.update(windowId, { focused: true });
+    }
     sendResponse({ success: true });
     return true;
   }

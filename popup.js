@@ -125,6 +125,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Add double-click to activate tab
+    tabControl.addEventListener('dblclick', () => {
+      chrome.runtime.sendMessage({
+        action: 'activateTab',
+        tabId: tab.id,
+        windowId: tab.windowId
+      });
+    });
+
     return tabControl;
   }
 
