@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "TabTune",
+  "version": "1.0",
+  "description": "Control and sync audio volume across all browser tabs",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+} 
