@@ -52,9 +52,11 @@ TabTune is organized for easy development and customization:
 
 ## Notes
 
-- TabTune works on any website with audio or video elements, except for Chrome system pages (e.g., chrome:// URLs).
--Adjusting overall device volume can increase the maximum threshold.
--For maximum seamlessnes make sure to pause a tab throught the extention instead of on the tab itself.
+- TabTune works on any website with audio or video elements (e.g., YouTube, Spotify, most streaming and media sites).
+- For audio generated using the Web Audio API (common in games, canvas/WebGL apps, or some interactive sites), TabTune attempts to control volume, but this may not work on all sites due to browser security restrictions or site-specific code.
+- The extension does not work on Chrome system pages (e.g., chrome:// URLs) or sites that block script injection.
+- Adjusting overall device volume can increase the maximum threshold.
+- For maximum seamlessness, make sure to pause a tab through the extension instead of on the tab itself.
 
 ## Design
 
