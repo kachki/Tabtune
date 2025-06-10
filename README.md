@@ -2,6 +2,8 @@
 
 TabTune is a powerful Chrome extension that gives you full control over audio and video playback across all your browser tabs. With an intuitive interface, you can independently adjust the volume, mute, pause, or remove any tab with media, and switch between light and dark modes for a comfortable experience.
 
+Link to Chrome Web Store: https://chromewebstore.google.com/detail/tabtune/melcmmmgjpojeologndmnohbfpdbffnj?hl=en 
+
 ## Features
 
 - **Independent Volume Control:** Adjust the volume for each tab with audio or video content.
